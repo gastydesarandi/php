@@ -15,7 +15,7 @@ if(isset($_SESSION["listadoClientes"])){
 
 //Pregunta si es postback sea para enviar o eliminar todos
 if($_POST){
-    //Si hace click en Enviar entonces:
+    //Si hace click en Enviar entonces(isset:si viene btn enviar,asociar los valores a variables):
     if(isset($_POST["btnEnviar"])){
         //Asignamos en variables los datos que vienen del formulario
         $nombre = $_POST["txtNombre"];
@@ -32,7 +32,7 @@ if($_POST){
         //Actualiza el contenido de variable de session
         $_SESSION["listadoClientes"] = $aClientes;
     }
-    //Si hace click en Eliminar
+    //Si hace click en Eliminar(si viene btnEliminar en POST)
     if(isset($_POST["btnEliminar"])){
         session_destroy();
         $aClientes = array();
